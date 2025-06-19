@@ -1,0 +1,51 @@
+name: CI Supabase + Frontend
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      # 1. Récupération du code
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      # 2. Installation Node + cache
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18
+          cache: 'npm'
+
+      # 3. Installation des dépendances
+      - name: Install dependencies
+        run: npm install
+
+      # 4. Lint (optionnel)
+      - name: Run ESLint
+        run: npm run lint
+
+      # 5. Build Vite
+      - name: Build frontend
+        run: npm run build
+
+      # 6. (Optionnel) Tests unitaires ou intégration
+      # - name: Run tests
+      #   run: npm run test
+
+      # 7. Setup Supabase CLI (si tu veux déployer des fonctions)
+      - name: Install Supabase CLI
+        run: npm install -g supabase
+
+      # 8. Authentification Supabase
+      - name: Login Supabase
+        run: supabase login --token ${{ secrets.SUPABASE_ACCESS_TOKEN }}
+
+      # 9. Déploiement des Edge Functions
+      - name: Deploy Supabase Edge Functions
+        run: supabase functions deploy all
