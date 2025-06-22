@@ -77,8 +77,8 @@ export const Navigation = ({ isNavVisible, toggleNav }: NavigationProps) => {
         <Link to="/">
           <motion.div className={`mx-5 ${isMobile ? 'scale-75' : ''}`}>
             <svg xmlns="http://www.w3.org/2000/svg" width="200" height="100" viewBox="-50 -50 650 200">
-              <text fontFamily="Mars" fontSize="86.667" fill="#010101" x="246" y="38" textAnchor="middle">Rotharc</text>
-              <text fontFamily="Rajdhani" fontSize="53.333" fill="#443f3f" x="400" y="120" textAnchor="middle">technologies</text>
+              <text className='titre_rotharc' fontSize="86.667" fill="#010101" x="246" y="38" textAnchor="middle">Rotharc</text>
+              <text className="sous_titre_rotharc" fontSize="53.333" fill="#443f3f" x="400" y="120" textAnchor="middle">technologies</text>
             </svg>
           </motion.div>
         </Link>

@@ -111,6 +111,16 @@
   }
 }
 
+.titre_rotharc {
+  font-family: "Mars";
+
+}
+
+.sous_titre_rotharc {
+  font-family: "rajdhani";
+
+}
+
 .animate-scroll {
   animation: scroll var(--animation-duration, 40s) var(--animation-direction, forwards) linear infinite;
 }
