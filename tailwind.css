@@ -91,16 +91,15 @@
 }
 
 @font-face {
-  font-family: "Medium";
-  src: local("Mars"),
-    url("./public/fonts/Mars.ttf") format("ttf");
+  font-family: "Mars";
+  src: local("Mars"), url("/fonts/Mars.ttf") format("truetype");
 }
 
 @font-face {
-  font-family: "Medium";
-  src: local("Rajdhani"),
-    url("./public/fonts/Rajdhani-Regular.ttf") format("ttf");
+  font-family: "Rajdhani";
+  src: local("Rajdhani"), url("/fonts/Rajdhani-Regular.ttf") format("truetype");
 }
+
 
 @keyframes scroll {
   from {
